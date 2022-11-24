@@ -1,7 +1,7 @@
-const router = require('express').Router()
+const router = require('express').Router();
+const { createCountdown } = require('../controllers/countdown.controllers');
 
 
-router.get()
-router.post()
-router.put()
-router.delete()
+router.post('/', createCountdown);
+
+module.exports = router;
