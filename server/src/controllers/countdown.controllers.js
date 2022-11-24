@@ -1,12 +1,12 @@
 const express = require('express');
 const Countdown = require('../models/countdown.model');
 
-const createCountdown = async (req, res) => {
+const getCountDown = async (req, res) => {
+  const events = await Countdown.find();
   try {
-    const countdown = await Countdown.create(req.body);
-    res.status(201).json({ success: true, task });
-  } catch (error) {
-    res.status(500).json({ msg: error.message });
+    res.status(200).json({ events });
+  } catch (e) {
+    throw new Error(e);
   }
 };
 
@@ -26,4 +26,4 @@ const updateCountDown = async (req, res) => {
   });
 };
 
-module.exports = { createCountdown, updateCountDown };
+module.exports = { createCountdown, updateCountDown, getCountDown };
