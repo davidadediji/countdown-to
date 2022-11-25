@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 const UserFormInput = ({
   label,
@@ -15,10 +16,8 @@ const UserFormInput = ({
     setFocused(true);
   };
 
-  console.log(id);
-
   return (
-    <div className="flex flex-col gap-2">
+    <UserFormStyle className="flex flex-col gap-2 inputWrapper">
       {id === "description" ? (
         <>
           <label htmlFor={id} className="text-base font-semibold text-primary">
@@ -55,8 +54,24 @@ const UserFormInput = ({
           </span>
         </>
       )}
-    </div>
+    </UserFormStyle>
   );
 };
 
 export default UserFormInput;
+
+const UserFormStyle = styled.div`
+  span {
+    color: red;
+    font-size: 0.8rem;
+    display: none;
+  }
+
+  input:invalid[focused="true"] ~ span {
+    display: block;
+  }
+
+  input:invalid[focused="true"] {
+    border: 1px solid red;
+  }
+`;
