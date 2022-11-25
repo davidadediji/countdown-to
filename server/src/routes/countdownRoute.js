@@ -107,6 +107,6 @@ router.post('/', createCountdown);
  *                     schema:
  *                          $ref: '#/components/schemas/Countdown'
 */
-router.put('/updateCountDown', updateCountDown);
+router.put('/:id', updateCountDown);
 
 module.exports = router;
