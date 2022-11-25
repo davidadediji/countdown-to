@@ -13,7 +13,7 @@ const Countdown = () => {
   const startTimer = () => {
     const countdownDate = new Date('December 25 2022 00:00:00').getTime();
 
-    interval = setInterval(() => {
+    interval.current = setInterval(() => {
         const now = new Date().getTime();
         const timeInterval = countdownDate - now;
 
@@ -35,14 +35,14 @@ const Countdown = () => {
 
   useEffect(() => {
     startTimer();
-    // return () => {
-    //     clearInterval(interval.current);
-    // }
+    return () => {
+        clearInterval(interval.current);
+    };
   }, []);
 
 
   return (
-    <main className="bg-background h-screen">
+    <main className="bg-background counterdown-height">
       <Container>
         <div className="flex flex-col items-center">
           <h2 className="font-bold text-5xl text-primary mb-8">
