@@ -1,15 +1,17 @@
 const express = require('express');
 const Countdown = require('../models/countdown.model');
-
+const uuid  = require("uuid")
 const createCountdown = async (req, res) => {
   try {
-      const countdown = await Countdown.create(req.body)
+      const slugUuid = uuid
+      const countdown = await Countdown.create({uuid : slugUuid},req.body)
       res.status(201).json({ success: true, countdown })
   } catch (error) {
       res.status(500).json({ msg: error.message })
   }
 
 }
+
 
 const getCountDown = async (req, res) => {
   const events = await Countdown.find();
