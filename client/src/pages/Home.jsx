@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Button from "../ui/Button";
 import { ReactComponent as ArrowRight } from "../assets/ArrowRight.svg";
 import { ReactComponent as Notion } from "../assets/Notion2.svg";
@@ -17,9 +16,7 @@ import styled from "styled-components";
 
 import Modal from "../components/Modal";
 
-const Home = () => {
-  const [openModal, setOpenModal] = useState(false);
-
+const Home = ({ setOpenModal, openModal }) => {
   return (
     <>
       <main
