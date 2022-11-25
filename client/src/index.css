@@ -40,10 +40,6 @@
 		font-weight: 400;
 	}
 
-  .counterdown-height {
-    height: calc(100vh - 80px);
-  }
-
   .nav-mobile {
     transform: translateX(-185%);
     transition: transform .5s;
