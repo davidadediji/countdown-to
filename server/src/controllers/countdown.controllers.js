@@ -7,14 +7,14 @@ const createCountdown = async (req, res) => {
       const countdown = await Countdown.create(req.body)
       if(countdown) 
       {
-        const userId = await User.findOne(countdown._id);
+        const userId = await Countdown.findOne(countdown._id);
         const userid = userId.id;
         const titleSlug = slug(userId.countdownTitle, {
           replacement: '_',
           lower: true,
         });
         if (userid === countdown.id) {
-          User.findByIdAndUpdate(countdown.id, {
+          Countdown.findByIdAndUpdate(countdown.id, {
             $set: { link: titleSlug + '_' + userid },
           }).then((result) => {
             if (!result) {
@@ -25,7 +25,7 @@ const createCountdown = async (req, res) => {
           });
         }
       }
-     
+   
   } catch (error) {
       res.status(500).json({ msg: error.message })
   }
