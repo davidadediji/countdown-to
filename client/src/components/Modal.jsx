@@ -98,7 +98,6 @@ const Modal = ({ setOpenModal }) => {
               className="bg-secondary flex gap-[10px] hover:bg-[#800C3C]  text-white py-[17px] px-8 rounded-[64px]"
             >
               Create a countdown link
-              {/* clicking should open the countdown page */}
             </Link>
           </div>
         </form>
