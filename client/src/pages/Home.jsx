@@ -26,7 +26,7 @@ const Home = () => {
           minHeight: "calc(100vh - 103px)",
         }}
         className="
-     flex justify-center items-center bg-background max-[500px]:pb-12"
+     flex justify-center items-center bg-white max-[500px]:pb-12"
       >
         <div className="max-w-screen-xl m-auto text-center flex flex-col items-center p-5">
           <h1
@@ -267,6 +267,10 @@ const CardStyledContainer = styled.div`
   grid-gap: 80px;
   padding: 1rem;
   margin-top: 4rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 `;
 
 const CardStyled = styled.div`

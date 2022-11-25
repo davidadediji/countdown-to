@@ -13,6 +13,7 @@ module.exports = {
       counterBoxShadow: "0px 4px 8px rgba(178, 37, 95, 0.15)",
       accent: "#7A7D96",
       backgroundAccent: "rgba(178, 37, 95, 0.1)",
+      background2: "#FFF8FD",
     },
     extend: {},
   },
