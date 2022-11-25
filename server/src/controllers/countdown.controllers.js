@@ -28,7 +28,7 @@ const updateCountDown = async (req, res) => {
       message: 'countdown does not exist',
     });
   }
-  const updatedCountDown = Countdown.findByIdAndUpdate(id, req.body, {
+  const updatedCountDown =await Countdown.findByIdAndUpdate(id, req.body, {
     new: true,
   });
   res.json({
