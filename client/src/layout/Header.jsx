@@ -29,7 +29,7 @@ const Header = () => {
           <img src={Logo} alt="County" className="w-[199.31px] h-[63.31px]" />
         </Link>
         <ul className="flex gap-10 max-[768px]:hidden">{navLinks}</ul>
-        <Button className="bg-secondary flex gap-[10px] text-white py-[17px] px-8 rounded-[64px] max-[768px]:hidden">
+        <Button className="bg-secondary hover:bg-[#800C3C] flex gap-[10px] text-white py-[17px] px-8 rounded-[64px] max-[768px]:hidden">
           Get started <ArrowRight />
         </Button>
         <MobileMenu

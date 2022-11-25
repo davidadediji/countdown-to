@@ -11,7 +11,7 @@ const Countdown = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countdownDate = new Date('December 25 2022 00:00:00').getTime();
+    const countdownDate = new Date('December 18 2022 12:00:00').getTime();
 
     interval.current = setInterval(() => {
         const now = new Date().getTime();
@@ -49,7 +49,7 @@ const Countdown = () => {
             Countdown Timer
           </h2>
           <div className="bg-counterBg w-[1048px] h-[507px] rounded-[20px] flex flex-col items-center py-[39px]">
-            <p className="text-[90px] leading-[104px] text-white">EVENT NAME</p>
+            <p className="text-[90px] leading-[104px] text-white">HNG ENDS</p>
             <p className="text-[#E9E9E9] text-[32px] leading-[36.9px] my-11">
               T - MINUS:
             </p>
