@@ -20,6 +20,9 @@ const CountdownSchema = new mongoose.Schema({
 	link: {
 		type: String,
 	},
+	slug: {
+		type: String
+	}
 });
 
 const Countdown = mongoose.model('Countdown', CountdownSchema);
