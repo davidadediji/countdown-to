@@ -19,7 +19,7 @@ const Countdown = () => {
 
         const days = Math.floor(timeInterval / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeInterval % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeInterval % (1000 * 60 * 60)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeInterval % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeInterval % (1000 * 60)) / 1000);
 
         if (timeInterval < 0) {
