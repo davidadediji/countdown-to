@@ -5,6 +5,7 @@ const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const { dbConnect } = require('./utils/connect');
 const countdown = require('./routes/countdownRoute');
+const linkRoute = require('./routes/linkRoute');
 
 dotenv.config();
 
@@ -36,6 +37,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/v1/countdown', countdown);
+app.use('/api/v1/link', linkRoute);
 app.use('/api/v1/countdown/docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.get('/', (req, res) => {
