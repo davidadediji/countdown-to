@@ -29,6 +29,7 @@ const options = {
 const specs = swaggerJSDoc(options);
 
 const app = express();
+
 const port = process.env.PORT || 5000;
 const url = String(process.env.MONGO_URI);
 app.use(
@@ -39,6 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/v1/countdown', countdown);
 app.use('/api/v1/link', linkRoute);
 app.use('/api/v1/countdown/docs', swaggerUi.serve, swaggerUi.setup(specs));
+
 
 app.get('/', (req, res) => {
 	res.send(`testing server`);

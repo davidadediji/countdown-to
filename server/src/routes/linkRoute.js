@@ -4,5 +4,5 @@ Linker
 = require('../controllers/link');
 
 
-app.get("/", Linker.GetLink)
+router.get("/", Linker.GetLink)
 module.exports = router
