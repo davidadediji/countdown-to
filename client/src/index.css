@@ -43,4 +43,13 @@
   .counterdown-height {
     height: calc(100vh - 80px);
   }
+
+  .nav-mobile {
+    transform: translateX(-185%);
+    transition: transform .5s;
+  }
+
+  .nav-active {
+    transform: translateX(0);
+  }
 }
