@@ -12,6 +12,7 @@ import { ReactComponent as ShowTimer } from "../assets/ShowTimer.svg";
 import { ReactComponent as FastPageLoads } from "../assets/FastPageLoads.svg";
 import { ReactComponent as CalendarView } from "../assets/CalendarView.svg";
 import { ReactComponent as FAQOpen } from "../assets/FAQOpen.svg";
+import Footer from "../layout/Footer";
 import styled from "styled-components";
 
 import Modal from "../components/Modal";
@@ -56,7 +57,7 @@ const Home = () => {
           </div>
           <div>
             <Button
-              className="bg-secondary flex gap-[10px] text-white py-[17px] px-8 rounded-[64px]"
+              className="bg-secondary flex gap-[10px] hover:bg-backgroundHover text-white py-[17px] px-8 rounded-[64px]"
               onClick={() => setOpenModal(!openModal)}
             >
               Create a countdown link <ArrowRight />
@@ -155,7 +156,7 @@ const Home = () => {
           </CardStyledContainer>
           <div className="flex flex-col gap-6 justify-center items-center mt-20">
             <Button
-              className="bg-secondary flex gap-[10px] text-white py-[17px] px-8 rounded-[64px]"
+              className="bg-secondary hover:bg-backgroundHover flex gap-[10px] text-white py-[17px] px-8 rounded-[64px]"
               onClick={() => setOpenModal(!openModal)}
             >
               Start your countdown <ArrowRight />
@@ -203,6 +204,8 @@ const Home = () => {
           </MonitorCardStyledContainer>
         </div>
       </section>
+
+      <Footer />
 
       {/* FAQ Section */}
       <section className="bg-white pb-20">
