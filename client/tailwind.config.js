@@ -7,6 +7,7 @@ module.exports = {
       footer: "#7A7D9C",
       footerHeading: "#F1478D",
       background: "#F3F5FF",
+      backgroundHover: "#800C3C",
       primary: "#0B0A33",
       secondary: "#B2255F",
       countDown: "#4D4C59",
