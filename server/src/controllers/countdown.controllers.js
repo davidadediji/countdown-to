@@ -9,6 +9,7 @@ const createCountdown = async (req, res) => {
       {
         const userId = await Countdown.findOne(countdown._id);
         const userid = userId.id;
+        userid.replace('', '_')
         const titleSlug = slug(userId.countdownTitle, {
           replacement: '_',
           lower: true,
