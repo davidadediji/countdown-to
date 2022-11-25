@@ -31,7 +31,7 @@ const specs = swaggerJSDoc(options);
 
 const app = express();
 
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT || 5000;
 const url = String(process.env.MONGO_URI);
 app.use(
 	cors()
@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
 	res.send(`testing server`);
 });
 
-app.listen(port, () => {
-	console.log(`server listening on port ${port}`);
+app.listen(url, () => {
+	// console.log(`server listening on port ${port}`);
 	dbConnect(url);
 });
