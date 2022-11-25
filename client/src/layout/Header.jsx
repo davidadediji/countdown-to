@@ -23,7 +23,7 @@ const Header = ({ openModal, setOpenModal }) => {
   ));
 
   return (
-    <header className="bg-background">
+    <header className="bg-white">
       <Container className="flex items-center justify-between p-5">
         <Link to="/">
           <img src={Logo} alt="County" className="w-[199.31px] h-[63.31px]" />

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Button from "../ui/Button";
 import { ReactComponent as ArrowRight } from "../assets/ArrowRight.svg";
 import { ReactComponent as Notion } from "../assets/Notion2.svg";
@@ -16,7 +17,9 @@ import styled from "styled-components";
 
 import Modal from "../components/Modal";
 
-const Home = ({ openModal, setOpenModal }) => {
+const Home = () => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <>
       <main
@@ -44,13 +47,13 @@ const Home = ({ openModal, setOpenModal }) => {
             className="p-4 flex gap-4 items-center justify-center mt-10 max-[508px]:grid grid-cols-2
         "
           >
-            <Timer title="Days" value={8} />
+            <Timer title="Days" value={98} />
             <Timer value=":" className="max-[508px]:hidden" />
-            <Timer title="Hours" value={12} />
+            <Timer title="Hours" value={10} />
             <Timer value=":" className="max-[508px]:hidden" />
-            <Timer title="Minutes" value={44} />
+            <Timer title="Minutes" value={56} />
             <Timer value=":" className="max-[508px]:hidden" />
-            <Timer title="Seconds" value={28} />
+            <Timer title="Seconds" value={98} />
           </div>
           <div>
             <Button
