@@ -17,8 +17,8 @@ const options = {
 		},
 		servers: [
 			{
-				url: 'http://localhost:4500',
-				description: 'Development server',
+				url: 'https://countdown-events.onrender.com/',
+				description: 'production server',
 			},
 		],
 	},
