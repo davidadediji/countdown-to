@@ -19,9 +19,9 @@ const Header = () => {
 
   return (
     <header className='max-w-screen-xl m-auto flex items-center justify-between p-5'>
-        <div>
+        <Link to="/">
             <img src={Logo} alt="County" className='w-[199.31px] h-[63.31px]' />
-        </div>
+        </Link>
         <ul className='flex gap-10'>
             {navLinks}
         </ul>
