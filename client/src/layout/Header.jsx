@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Button from "../ui/Button";
 import { Link } from "react-router-dom";
+import Container from "../ui/Container";
 import { ReactComponent as ArrowRight } from "../assets/ArrowRight.svg";
 import { ReactComponent as MobileMenu } from "../assets/MobileMenu.svg";
 import { ReactComponent as Close } from "../assets/Close.svg";
 import Logo from "../assets/Logo.png";
-import Container from "../ui/Container";
 
 const Header = () => {
   const [mobileToggle, setMobileToggle] = useState(false);
@@ -29,7 +29,7 @@ const Header = () => {
           <img src={Logo} alt="County" className="w-[199.31px] h-[63.31px]" />
         </Link>
         <ul className="flex gap-10 max-[768px]:hidden">{navLinks}</ul>
-        <Button className="bg-secondary flex gap-[10px] text-white py-[17px] px-8 rounded-[64px] max-[768px]:hidden">
+        <Button className="bg-secondary hover:bg-[#800C3C] flex gap-[10px] text-white py-[17px] px-8 rounded-[64px] max-[768px]:hidden">
           Get started <ArrowRight />
         </Button>
         <MobileMenu

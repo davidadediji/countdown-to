@@ -7,6 +7,7 @@ const { dbConnect } = require('./utils/connect');
 const countdown = require('./routes/countdownRoute');
 const linkRoute = require('./routes/linkRoute');
 
+
 dotenv.config();
 
 const options = {
@@ -35,6 +36,7 @@ const url = String(process.env.MONGO_URI);
 app.use(
 	cors()
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/v1/countdown', countdown);
