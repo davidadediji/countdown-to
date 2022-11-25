@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     colors: {
       background: "#F3F5FF",
@@ -10,10 +8,10 @@ module.exports = {
       secondary: "#B2255F",
       countDown: "#4D4C59",
       placeholders: "#888888",
-      counterBg: "background: rgba(178, 37, 95, 0.8)",
-      counterBoxShadow: "box-shadow: 0px 4px 8px rgba(178, 37, 95, 0.15)",
+      counterBg: "rgba(178, 37, 95, 0.8)",
+      counterBoxShadow: "0px 4px 8px rgba(178, 37, 95, 0.15)",
     },
     extend: {},
   },
   plugins: [],
-}
+};
