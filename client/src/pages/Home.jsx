@@ -205,8 +205,6 @@ const Home = () => {
         </div>
       </section>
 
-      <Footer />
-
       {/* FAQ Section */}
       <section className="bg-white pb-20">
         <div className="max-w-screen-xl m-auto text-center p-5">
@@ -259,6 +257,7 @@ const Home = () => {
           </FaqCardStyledContainer>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

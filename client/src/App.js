@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from "./layout/Footer";
+// import Footer from "./layout/Footer";
 import Header from "./layout/Header";
-import { Countdown, Home } from "./pages"
+import { Countdown, Home } from "./pages";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/countdown" element={<Countdown />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </Fragment>
   );
