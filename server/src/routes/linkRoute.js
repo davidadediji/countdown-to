@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const 
-Linker
+const Linker
 = require('../controllers/link');
+const Link = require('../controllers/searchLink')
 
 
 
-router.get("/:id/:slug", Linker.GetLink)
+router.get("/:id", Linker.GetLink)
+router.get("/search/:link",Link.SearchLink )
 
 module.exports = router
