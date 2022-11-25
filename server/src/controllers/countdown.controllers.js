@@ -1,11 +1,31 @@
 const express = require('express');
 const Countdown = require('../models/countdown.model');
-const uuid  = require("uuid")
+const slug = require("slugify")
 const createCountdown = async (req, res) => {
   try {
-      const slugUuid = uuid
-      const countdown = await Countdown.create({uuid : slugUuid},req.body)
-      res.status(201).json({ success: true, countdown })
+    
+      const countdown = await Countdown.create(req.body)
+      if(countdown) 
+      {
+        const userId = await User.findOne(countdown._id);
+        const userid = userId.id;
+        const titleSlug = slug(userId.countdownTitle, {
+          replacement: '_',
+          lower: true,
+        });
+        if (userid === countdown.id) {
+          User.findByIdAndUpdate(countdown.id, {
+            $set: { link: titleSlug + '_' + userid },
+          }).then((result) => {
+            if (!result) {
+              res.status(400).json({msg: 'Link not created'});
+            } else {
+              res.status(201).json({ success: true, countdown })
+            }
+          });
+        }
+      }
+     
   } catch (error) {
       res.status(500).json({ msg: error.message })
   }
