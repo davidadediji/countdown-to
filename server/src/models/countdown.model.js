@@ -3,9 +3,8 @@ const mongoose = require('mongoose');
 const CountdownSchema = new mongoose.Schema({
 	email: {
 		type: String,
-		required: [true, 'must provide name'],
+		required: [true, 'must provide an email'],
 		trim: true,
-		maxlength: [20, 'name cannot exceed 20 characters'],
 	},
 	countdownTitle: {
 		type: String,
@@ -16,6 +15,7 @@ const CountdownSchema = new mongoose.Schema({
 	},
 	countdownDate: {
 		type: Date,
+		required:[true, 'date is required']
 	},
 	link: {
 		type: String,
