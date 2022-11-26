@@ -9,6 +9,7 @@ import Logo from "../assets/Logo.png";
 
 const Header = ({ setOpenModal, openModal }) => {
   const [mobileToggle, setMobileToggle] = useState(false);
+  // const [mobileMenu, setMobileMenu] = useState(false);
 
   const navLinkElements = [
     { name: "FAQ", url: "#faq" },
