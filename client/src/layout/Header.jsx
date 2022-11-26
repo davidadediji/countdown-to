@@ -7,7 +7,7 @@ import { ReactComponent as MobileMenu } from "../assets/MobileMenu.svg";
 import { ReactComponent as Close } from "../assets/Close.svg";
 import Logo from "../assets/Logo.png";
 
-const Header = ({ setOpenModal, openModal }) => {
+const Header = () => {
   const [mobileToggle, setMobileToggle] = useState(false);
   // const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -30,10 +30,7 @@ const Header = ({ setOpenModal, openModal }) => {
           <img src={Logo} alt="County" className="w-[199.31px] h-[63.31px]" />
         </Link>
         <ul className="flex gap-10 max-[768px]:hidden">{navLinks}</ul>
-        <Button
-          className="bg-secondary hover:bg-[#800C3C] flex gap-[10px] text-white py-[17px] px-8 rounded-[64px] max-[768px]:hidden"
-          onClick={() => setOpenModal(!openModal)}
-        >
+        <Button className="bg-secondary hover:bg-[#800C3C] flex gap-[10px] text-white py-[17px] px-8 rounded-[64px] max-[768px]:hidden">
           Get started <ArrowRight />
         </Button>
         <MobileMenu
@@ -47,11 +44,7 @@ const Header = ({ setOpenModal, openModal }) => {
         }`}
       >
         <Link to="/">
-          <img
-            src={Logo}
-            alt="County"
-            className="w-[199.31px] h-[63.31px] mb-5"
-          />
+          <img src={Logo} alt="County" className="w-[199.31px] h-[63.31px] mb-5" />
         </Link>
         <Close
           onClick={() => setMobileToggle(false)}

@@ -12,14 +12,13 @@ import { ReactComponent as ShowTimer } from "../assets/ShowTimer.svg";
 import { ReactComponent as FastPageLoads } from "../assets/FastPageLoads.svg";
 import { ReactComponent as CalendarView } from "../assets/CalendarView.svg";
 import { ReactComponent as FAQOpen } from "../assets/FAQOpen.svg";
-import { ReactComponent as FAQClose } from "../assets/FAQClose.svg";
 import Footer from "../layout/Footer";
 import styled from "styled-components";
 
 import Modal from "../components/Modal";
 
-const Home = ({ openModal, setOpenModal }) => {
-  // const [openModal, setOpenModal] = useState(false);
+const Home = () => {
+  const [openModal, setOpenModal] = useState(false);
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
   const [timerMinutes, setTimerMinutes] = useState("00");
@@ -28,38 +27,35 @@ const Home = ({ openModal, setOpenModal }) => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countdownDate = new Date("December 18 2022 12:00:00").getTime();
+    const countdownDate = new Date('December 18 2022 12:00:00').getTime();
 
     interval.current = setInterval(() => {
-      const now = new Date().getTime();
-      const timeInterval = countdownDate - now;
+        const now = new Date().getTime();
+        const timeInterval = countdownDate - now;
 
-      const days = Math.floor(timeInterval / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (timeInterval % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor(
-        (timeInterval % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      const seconds = Math.floor((timeInterval % (1000 * 60)) / 1000);
+        const days = Math.floor(timeInterval / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeInterval % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeInterval % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeInterval % (1000 * 60)) / 1000);
 
-      if (timeInterval < 0) {
-        clearInterval(interval.current);
-      } else {
-        setTimerDays(days);
-        setTimerHours(hours);
-        setTimerMinutes(minutes);
-        setTimerSeconds(seconds);
-      }
-    }, 1000);
-  };
+        if (timeInterval < 0) {
+            clearInterval(interval.current);
+        } else {
+            setTimerDays(days);
+            setTimerHours(hours);
+            setTimerMinutes(minutes);
+            setTimerSeconds(seconds);
+        }
+    }, 1000)
+  }
 
   useEffect(() => {
     startTimer();
     return () => {
-      clearInterval(interval.current);
+        clearInterval(interval.current);
     };
   }, []);
+
 
   return (
     <>
@@ -73,7 +69,7 @@ const Home = ({ openModal, setOpenModal }) => {
         <div className="max-w-screen-xl m-auto text-center flex flex-col items-center p-5">
           <h1
             className="text-6xl  text-center leading-normal mb-3
-          max-[768px]:text-5xl max-w-[768px]:leading-relaxed max-[467px]:text-4xl
+          max-[768px]:text-5xl max-w-[768px]:leading-relaxed
         "
           >
             Never lose track of your important dates with our{" "}
@@ -145,7 +141,7 @@ const Home = ({ openModal, setOpenModal }) => {
       </section>
 
       {/*  Country used for */}
-      <section className="bg-white pb-20 max-md:p-5 max-[407px]:p-0">
+      <section className="bg-white pb-20 max-md:p-5">
         <div className="max-w-screen-xl m-auto text-center ">
           <div className="flex flex-col gap-6 justify-center items-center">
             <H3 title="Use case" />
@@ -207,7 +203,7 @@ const Home = ({ openModal, setOpenModal }) => {
       </section>
 
       {/* Monitor Upcoming Events*/}
-      <section className="bg-white pt-20 pb-20 max-[407px]:p-0">
+      <section className="bg-white pt-20 pb-20">
         <div className="max-w-screen-xl m-auto text-center p-5">
           <div className="flex flex-col gap-6 justify-center items-center">
             <H3 title="Goal Module" />
@@ -247,7 +243,7 @@ const Home = ({ openModal, setOpenModal }) => {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-white pb-20 max-[407px]:p-0">
+      <section className="bg-white pb-20">
         <div className="max-w-screen-xl m-auto text-center p-5">
           <div className="max-w-screen-xl m-auto text-center ">
             <div className="flex flex-col gap-6 justify-center items-center">
@@ -262,27 +258,38 @@ const Home = ({ openModal, setOpenModal }) => {
             <FaqCard
               title="Can I use use the timer in different zones?"
               description="click on the “Create Countdown” button to create the countdown."
+              className="hidden"
+              icon={<FAQOpen />}
             />
             <FaqCard
               title="Can I use use the timer in different zones?"
-              description="County can be used in different time zones around the world. From Nigeria, to France, to China, stay updated with your events around the globe."
+              description="To create a countdown, you need to sign up for an account. Once you have signed up, you can create a countdown by clicking on the “Create Countdown” button on the dashboard. You will be asked to enter the title of the countdown, the date and time of the event, and the description of the countdown. You can also choose to add a background image to the countdown. Once you have entered all the details, click on the “Create Countdown” button to create the countdown."
+              className="hidden"
+              icon={<FAQOpen />}
             />
             <FaqCard
-              title="
-                Can I pick my own theme for the timer and the email link sent to me?"
-              description="County can be used in different time zones around the world. From Nigeria, to France, to China, stay updated with your events around the globe."
+              title="Can I pick my theme for the timer?"
+              description="click on the “Create Countdown” button to create the countdown."
+              className="hidden"
+              icon={<FAQOpen />}
             />
             <FaqCard
               title="Can I use use the timer in different time zones?"
-              description="County can be used in different time zones around the world. From Nigeria, to France, to China, stay updated with your events around the globe."
+              description="click on the “Create Countdown” button to create the countdown."
+              className="hidden"
+              icon={<FAQOpen />}
             />
             <FaqCard
-              title="How do I get my countdown link sent to my email?"
-              description="County can be used in different time zones around the world. From Nigeria, to France, to China, stay updated with your events around the globe."
+              title="How do I get my countdown link?"
+              description="click on the “Create Countdown” button to create the countdown."
+              className="hidden"
+              icon={<FAQOpen />}
             />
             <FaqCard
               title="Can I use use the timer in different zones?"
-              description="County can be used in different time zones around the world. From Nigeria, to France, to China, stay updated with your events around the globe."
+              description="click on the “Create Countdown” button to create the countdown."
+              className="hidden"
+              icon={<FAQOpen />}
             />
           </FaqCardStyledContainer>
         </div>
@@ -293,69 +300,6 @@ const Home = ({ openModal, setOpenModal }) => {
 };
 
 export default Home;
-
-const Timer = ({ title, value, className }) => {
-  return (
-    <div className={`item ${className} text-center`}>
-      <h3 className="text-7xl font-normal leading-relaxed ">
-        <span className="block text-sm"> {title} </span>
-        <span> {value} </span>
-      </h3>
-    </div>
-  );
-};
-
-const FaqCard = ({ title, description }) => {
-  const [faqOpen, setFaqOpen] = useState(false);
-
-  return (
-    <FAQCardStyle className="card">
-      <div className="flex gap-6 items-start">
-        <div>
-          {faqOpen ? (
-            <FAQClose
-              className="w-[30px] h-[30px] cursor-pointer "
-              onClick={() => setFaqOpen(!faqOpen)}
-            />
-          ) : (
-            <FAQOpen
-              className="w-[30px] h-[30px] cursor-pointer"
-              onClick={() => setFaqOpen(!faqOpen)}
-            />
-          )}
-        </div>
-        <h4 className="text-2xl font-bold text-primary">
-          {title}
-          {faqOpen && (
-            <span className="text-accent leading-7 block font-semibold text-base mt-5">
-              {description}
-            </span>
-          )}
-        </h4>
-      </div>
-    </FAQCardStyle>
-  );
-};
-
-const Card = ({ title, description, icon }) => {
-  return (
-    <CardStyled className="card-container">
-      {/* // add the icon */}
-      <div className="icon">{icon}</div>
-      <h4 className="font-semibold text-2xl text-primary">{title}</h4>
-      <p className="text-accent leading-7">{description}</p>
-    </CardStyled>
-  );
-};
-
-const H3 = ({ title }) => {
-  return (
-    <h3 className="px-6 py-4 text-base font-semibold text-secondary bg-backgroundAccent inline rounded-full">
-      {title}
-    </h3>
-  );
-};
-
 const CardStyledContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(346px, 1fr));
@@ -365,10 +309,6 @@ const CardStyledContainer = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  @media (max-width: 407px) {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 `;
 
@@ -405,15 +345,6 @@ const MonitorCardStyledContainer = styled.div`
   padding: 1rem;
   margin-top: 4rem;
 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  @media (max-width: 407px) {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 0;
-  }
-
   .card {
     background: #fff;
     border-radius: 20px;
@@ -442,15 +373,6 @@ const FaqCardStyledContainer = styled.div`
   grid-gap: 40px;
   padding: 1rem;
   margin-top: 4rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  @media (max-width: 407px) {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 0;
-  }
 `;
 
 const FAQCardStyle = styled.div`
@@ -461,10 +383,8 @@ const FAQCardStyle = styled.div`
   flex-direction: column;
   // justify-content: space-between;
   align-items: flex-start;
-  // prevent the card height from stretching
-  height: max-content;
-
-  // gap: 5rem;
+  gap: 5rem;
+  height: 100%;
   text-align: left;
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 4px 12px rgba(148, 148, 148, 0.15);
@@ -474,3 +394,45 @@ const FAQCardStyle = styled.div`
     transform: translateY(-5px);
   }
 `;
+
+const Timer = ({ title, value, className }) => {
+  return (
+    <div className={`item ${className} text-center`}>
+      <h3 className="text-7xl font-normal leading-relaxed ">
+        <span className="block text-sm"> {title} </span>
+        <span> {value} </span>
+      </h3>
+    </div>
+  );
+};
+
+const FaqCard = ({ title, description, icon, className }) => {
+  return (
+    <FAQCardStyle className="card">
+      <div className="flex gap-6 items-start">
+        <div className="icon">{icon}</div>
+        <h4 className="text-2xl font-bold text-primary">{title}</h4>
+      </div>
+      <p className={`text-accent leading-7 ${className}`}>{description}</p>
+    </FAQCardStyle>
+  );
+};
+
+const Card = ({ title, description, icon, className }) => {
+  return (
+    <CardStyled className="card-container">
+      {/* // add the icon */}
+      <div className="icon">{icon}</div>
+      <h4 className="font-semibold text-2xl text-primary">{title}</h4>
+      <p className="text-accent leading-7">{description}</p>
+    </CardStyled>
+  );
+};
+
+const H3 = ({ title }) => {
+  return (
+    <h3 className="px-6 py-4 text-base font-semibold text-secondary bg-backgroundAccent inline rounded-full">
+      {title}
+    </h3>
+  );
+};
