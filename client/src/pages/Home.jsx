@@ -141,7 +141,7 @@ const Home = () => {
       </section>
 
       {/*  Country used for */}
-      <section className="bg-white pb-20 max-md:p-5">
+      <section className="bg-white pb-20 max-md:p-5" id="use-cases">
         <div className="max-w-screen-xl m-auto text-center ">
           <div className="flex flex-col gap-6 justify-center items-center">
             <H3 title="Use case" />
@@ -243,7 +243,7 @@ const Home = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-white pb-20">
+      <section className="bg-white pb-20" id="faq">
         <div className="max-w-screen-xl m-auto text-center p-5">
           <div className="max-w-screen-xl m-auto text-center ">
             <div className="flex flex-col gap-6 justify-center items-center">
