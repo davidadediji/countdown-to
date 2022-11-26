@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Button from "../ui/Button";
+// import Button from "../ui/Button";
 import { ReactComponent as Cancel } from "../assets/Close.svg";
 import UserFormInput from "./UserformInput";
+import { Link } from "react-router-dom";
 
 const Modal = ({ setOpenModal }) => {
   const [values, setValues] = useState({
@@ -93,9 +94,12 @@ const Modal = ({ setOpenModal }) => {
             ))}
           </div>
           <div className="text-center w-full flex items-center justify-center">
-            <Button className="bg-secondary flex gap-[10px] text-white py-[17px] px-8 rounded-[64px]">
+            <Link
+              to="/countdown"
+              className="bg-secondary flex gap-[10px] text-white py-[17px] px-8 rounded-[64px] hover:bg-backgroundHover "
+            >
               Create a countdown link
-            </Button>
+            </Link>
           </div>
         </form>
       </div>
